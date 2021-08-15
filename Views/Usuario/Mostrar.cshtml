@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Proyecto_Progra.Models.USUARIO>
+
+@{
+    ViewBag.Title = "Mostrar";
+}
+
+<h2>Mostrar</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Guardar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APELLIDOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTRASENA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APELLIDOS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTRASENA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRECCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TELEFONO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Modificar", new { id=item.ID_USUARIO }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.ID_USUARIO }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.ID_USUARIO })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,20 @@
+﻿@model Proyecto_Progra.Clase.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Ingreso de credenciales</h2>
+
+
+@using (Html.BeginForm())
+{
+@Html.LabelFor(d => d.EMAIL)
+@Html.TextBoxFor(d => d.EMAIL)
+ <br />
+@Html.LabelFor(d => d.CONTRASENA)
+@Html.PasswordFor(d => d.CONTRASENA)
+  <br />
+ <button>Ingresar</button>}
+<br />
+<font color="red"> @TempData["Mensaje"]</font> 
